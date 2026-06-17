@@ -53,15 +53,15 @@ The Vite dev server proxies `/api` requests to the backend, so frontend calls us
 
 ```bash
 git clone <repo-url>
-cd tunisia-invest
+cd tunIA
 ```
 
 ### 2. Backend
 
 ```bash
 python -m venv myvenvv
-source myvenvv/bin/activate     # Linux/macOS
-# myvenvv\Scripts\activate      # Windows
+#source myvenvv/bin/activate.sh     # Linux/macOS
+# myvenvv\Scripts\activate.bat      # Windows
 
 pip install -r requirements.txt
 cd backend
