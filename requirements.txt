@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+pydantic
+httpx
+pdfplumber
+python-docx
+openpyxl
+google-genai
+python-multipart
+python-jose[cryptography]
+apscheduler
+reportlab
+ddgs
+trafilatura
+beautifulsoup4

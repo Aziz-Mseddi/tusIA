@@ -1,0 +1,46 @@
+# --- Secrets & credentials ---
+.env
+.env.local
+credentials.json
+token.json
+
+# --- Temporary / disposable files ---
+.tmp/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+myvenv/
+myvenvv/
+venv/
+.venv/
+
+# --- Databases / local data ---
+*.db
+*.sqlite
+*.sqlite3
+
+# --- Node / frontend ---
+node_modules/
+frontend/dist/
+frontend/node_modules/
+npm-debug.log*
+
+# --- Logs ---
+*.log
+
+# --- Generated output ---
+output/
+
+# --- Editor / OS ---
+.DS_Store
+Thumbs.db
+.vscode/
+*.swp
+
+# --- Reference / scratch files ---
+temporary screenshots/
+*.png
+*.jpg
+*.jpeg

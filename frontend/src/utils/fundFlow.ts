@@ -1,0 +1,8 @@
+export const FUND_FLOW_COLORS: Record<string, string> = {
+  OK: '#8FA982',
+  'MINOR OVERRUN': '#C4A572',
+  OVERSPEND: '#C58A6B',
+  'MAJOR OVERRUN': '#B36B4C',
+  UNDERSPEND: '#8C948A',
+  UNAUTHORIZED: '#9A5A40',
+}

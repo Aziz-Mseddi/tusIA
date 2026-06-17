@@ -1,0 +1,296 @@
+[
+  {
+    "cat": "Schema/API",
+    "name": "no-auth on prompt-filter",
+    "status": "PASS",
+    "note": "HTTP 500 (500=server error, acceptable as observation)"
+  },
+  {
+    "cat": "Schema/API",
+    "name": "missing required 'prompt' field",
+    "status": "PASS",
+    "note": "HTTP 422"
+  },
+  {
+    "cat": "Schema/API",
+    "name": "wrong type: prompt=integer",
+    "status": "PASS",
+    "note": "HTTP 422"
+  },
+  {
+    "cat": "Schema/API",
+    "name": "extract-clauses without auth",
+    "status": "PASS",
+    "note": "HTTP 401"
+  },
+  {
+    "cat": "Schema/API",
+    "name": "extract from non-existent investment",
+    "status": "PASS",
+    "note": "HTTP 404"
+  },
+  {
+    "cat": "Schema/API",
+    "name": "zero-byte file upload",
+    "status": "PASS",
+    "note": "HTTP 200"
+  },
+  {
+    "cat": "AI Filtering",
+    "name": "normal: sector filter",
+    "status": "FAIL",
+    "note": "HTTP 500: {\"error\":\"Internal server error\",\"detail\":\"Server error '500 Internal Server Error' for url 'http://localhost:11434/api/chat'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/"
+  },
+  {
+    "cat": "AI Filtering",
+    "name": "normal: high revenue filter",
+    "status": "FAIL",
+    "note": "HTTP 500: {\"error\":\"Internal server error\",\"detail\":\"Server error '500 Internal Server Error' for url 'http://localhost:11434/api/chat'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/"
+  },
+  {
+    "cat": "AI Filtering",
+    "name": "normal: country + stage",
+    "status": "FAIL",
+    "note": "Exception: "
+  },
+  {
+    "cat": "AI Filtering",
+    "name": "normal: high score",
+    "status": "FAIL",
+    "note": "HTTP 500: {\"error\":\"Internal server error\",\"detail\":\"Server error '500 Internal Server Error' for url 'http://localhost:11434/api/chat'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/"
+  },
+  {
+    "cat": "AI Filtering",
+    "name": "edge: empty prompt",
+    "status": "FAIL",
+    "note": "Exception: "
+  },
+  {
+    "cat": "AI Filtering",
+    "name": "edge: nonsense input",
+    "status": "FAIL",
+    "note": "HTTP 500: {\"error\":\"Internal server error\",\"detail\":\"Server error '500 Internal Server Error' for url 'http://localhost:11434/api/chat'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/"
+  },
+  {
+    "cat": "AI Filtering",
+    "name": "edge: prompt injection attempt",
+    "status": "FAIL",
+    "note": "Exception: "
+  },
+  {
+    "cat": "AI Filtering",
+    "name": "edge: very long prompt",
+    "status": "FAIL",
+    "note": "HTTP 500: {\"error\":\"Internal server error\",\"detail\":\"Server error '500 Internal Server Error' for url 'http://localhost:11434/api/chat'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/"
+  },
+  {
+    "cat": "AI Filtering",
+    "name": "edge: mixed languages",
+    "status": "FAIL",
+    "note": "Exception: "
+  },
+  {
+    "cat": "AI Filtering",
+    "name": "edge: conflicting criteria",
+    "status": "FAIL",
+    "note": "HTTP 500: {\"error\":\"Internal server error\",\"detail\":\"Server error '500 Internal Server Error' for url 'http://localhost:11434/api/chat'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/"
+  },
+  {
+    "cat": "AI Filtering",
+    "name": "edge: SQL injection attempt",
+    "status": "FAIL",
+    "note": "Exception: "
+  },
+  {
+    "cat": "AI Filtering",
+    "name": "edge: numeric only",
+    "status": "FAIL",
+    "note": "HTTP 500: {\"error\":\"Internal server error\",\"detail\":\"Server error '500 Internal Server Error' for url 'http://localhost:11434/api/chat'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/"
+  },
+  {
+    "cat": "Clause Extraction",
+    "name": "normal: standard investment pact",
+    "status": "FAIL",
+    "note": "Exception: "
+  },
+  {
+    "cat": "Clause Extraction",
+    "name": "normal: minimal contract one clause",
+    "status": "FAIL",
+    "note": "source=ai_failed extracted=0 | data={\"source\": \"ai_failed\", \"extracted_count\": 0, \"clauses\": [], \"error\": \"Server error '500 Internal Server Error' for url "
+  },
+  {
+    "cat": "Clause Extraction",
+    "name": "normal: dates in multiple formats",
+    "status": "FAIL",
+    "note": "source=ai_failed extracted=0 | data={\"source\": \"ai_failed\", \"extracted_count\": 0, \"clauses\": [], \"error\": \"Server error '500 Internal Server Error' for url "
+  },
+  {
+    "cat": "Clause Extraction",
+    "name": "edge: empty file",
+    "status": "PASS",
+    "note": "source=ai_failed extracted=0"
+  },
+  {
+    "cat": "Clause Extraction",
+    "name": "edge: no clauses just prose",
+    "status": "FAIL",
+    "note": "source=ai_failed extracted=0 | data={\"source\": \"ai_failed\", \"extracted_count\": 0, \"clauses\": [], \"error\": \"Server error '500 Internal Server Error' for url "
+  },
+  {
+    "cat": "Clause Extraction",
+    "name": "edge: Unicode and Arabic text",
+    "status": "FAIL",
+    "note": "source=ai_failed extracted=0 | data={\"source\": \"ai_failed\", \"extracted_count\": 0, \"clauses\": [], \"error\": \"Server error '500 Internal Server Error' for url "
+  },
+  {
+    "cat": "Clause Extraction",
+    "name": "edge: only numbers and tables",
+    "status": "FAIL",
+    "note": "source=ai_failed extracted=0 | data={\"source\": \"ai_failed\", \"extracted_count\": 0, \"clauses\": [], \"error\": \"Server error '500 Internal Server Error' for url "
+  },
+  {
+    "cat": "Clause Extraction",
+    "name": "edge: very long document (>5000 chars sent, only 5000 used)",
+    "status": "FAIL",
+    "note": "source=ai_failed extracted=0 | data={\"source\": \"ai_failed\", \"extracted_count\": 0, \"clauses\": [], \"error\": \"Server error '500 Internal Server Error' for url "
+  },
+  {
+    "cat": "Clause Extraction",
+    "name": "edge: unsupported file type",
+    "status": "PASS",
+    "note": "HTTP 400 (expected for unsupported type): {\"detail\":\"Unsupported file type: contract.xyz\"}"
+  },
+  {
+    "cat": "Clause Extraction",
+    "name": "edge: binary garbage in text file",
+    "status": "PASS",
+    "note": "source=ai_failed extracted=0"
+  },
+  {
+    "cat": "Milestone Extraction",
+    "name": "normal: standard business plan",
+    "status": "FAIL",
+    "note": "source=ai_failed extracted=0 | {\"source\": \"ai_failed\", \"extracted_count\": 0, \"milestones\": [], \"error\": \"Server error '500 Internal Server Error' for u"
+  },
+  {
+    "cat": "Milestone Extraction",
+    "name": "normal: single milestone",
+    "status": "FAIL",
+    "note": "source=ai_failed extracted=0 | {\"source\": \"ai_failed\", \"extracted_count\": 0, \"milestones\": [], \"error\": \"Server error '500 Internal Server Error' for u"
+  },
+  {
+    "cat": "Milestone Extraction",
+    "name": "normal: French language plan",
+    "status": "FAIL",
+    "note": "source=ai_failed extracted=0 | {\"source\": \"ai_failed\", \"extracted_count\": 0, \"milestones\": [], \"error\": \"Server error '500 Internal Server Error' for u"
+  },
+  {
+    "cat": "Milestone Extraction",
+    "name": "edge: empty document",
+    "status": "PASS",
+    "note": "source=ai_failed extracted=0"
+  },
+  {
+    "cat": "Milestone Extraction",
+    "name": "edge: financial projections only (no milestones)",
+    "status": "FAIL",
+    "note": "source=ai_failed extracted=0 | {\"source\": \"ai_failed\", \"extracted_count\": 0, \"milestones\": [], \"error\": \"Server error '500 Internal Server Error' for u"
+  },
+  {
+    "cat": "Milestone Extraction",
+    "name": "edge: vague goals without dates",
+    "status": "FAIL",
+    "note": "source=ai_failed extracted=0 | {\"source\": \"ai_failed\", \"extracted_count\": 0, \"milestones\": [], \"error\": \"Server error '500 Internal Server Error' for u"
+  },
+  {
+    "cat": "Milestone Extraction",
+    "name": "edge: milestones already past (old dates)",
+    "status": "FAIL",
+    "note": "source=ai_failed extracted=0 | {\"source\": \"ai_failed\", \"extracted_count\": 0, \"milestones\": [], \"error\": \"Server error '500 Internal Server Error' for u"
+  },
+  {
+    "cat": "Milestone Extraction",
+    "name": "edge: contradiction \u2014 same milestone listed twice with different dates",
+    "status": "FAIL",
+    "note": "source=ai_failed extracted=0 | {\"source\": \"ai_failed\", \"extracted_count\": 0, \"milestones\": [], \"error\": \"Server error '500 Internal Server Error' for u"
+  },
+  {
+    "cat": "Milestone Extraction",
+    "name": "edge: deeply nested structure",
+    "status": "FAIL",
+    "note": "source=ai_failed extracted=0 | {\"source\": \"ai_failed\", \"extracted_count\": 0, \"milestones\": [], \"error\": \"Server error '500 Internal Server Error' for u"
+  },
+  {
+    "cat": "Milestone Extraction",
+    "name": "edge: PDF format",
+    "status": "FAIL",
+    "note": "source=ai_failed extracted=0 | {\"source\": \"ai_failed\", \"extracted_count\": 0, \"milestones\": [], \"error\": \"Server error '500 Internal Server Error' for u"
+  },
+  {
+    "cat": "Fund Flow Extraction",
+    "name": "normal: standard accountant report",
+    "status": "FAIL",
+    "note": "source=ai_failed extracted=0"
+  },
+  {
+    "cat": "Fund Flow Extraction",
+    "name": "normal: French accountant report",
+    "status": "FAIL",
+    "note": "source=ai_failed extracted=0"
+  },
+  {
+    "cat": "Fund Flow Extraction",
+    "name": "normal: inline paragraph format",
+    "status": "FAIL",
+    "note": "source=ai_failed extracted=0"
+  },
+  {
+    "cat": "Fund Flow Extraction",
+    "name": "edge: empty document",
+    "status": "PASS",
+    "note": "source=ai_failed extracted=0"
+  },
+  {
+    "cat": "Fund Flow Extraction",
+    "name": "edge: no amounts, only categories",
+    "status": "FAIL",
+    "note": "source=ai_failed extracted=0"
+  },
+  {
+    "cat": "Fund Flow Extraction",
+    "name": "edge: amounts without categories",
+    "status": "FAIL",
+    "note": "source=ai_failed extracted=0"
+  },
+  {
+    "cat": "Fund Flow Extraction",
+    "name": "edge: mixed currencies",
+    "status": "FAIL",
+    "note": "source=ai_failed extracted=0"
+  },
+  {
+    "cat": "Fund Flow Extraction",
+    "name": "edge: very large amounts",
+    "status": "FAIL",
+    "note": "source=ai_failed extracted=0"
+  },
+  {
+    "cat": "Fund Flow Extraction",
+    "name": "edge: negative amounts",
+    "status": "FAIL",
+    "note": "source=ai_failed extracted=0"
+  },
+  {
+    "cat": "Fund Flow Extraction",
+    "name": "edge: duplicate categories",
+    "status": "FAIL",
+    "note": "source=ai_failed extracted=0"
+  },
+  {
+    "cat": "Fund Flow Extraction",
+    "name": "edge: CSV-style format",
+    "status": "PASS",
+    "note": "HTTP 400: {\"detail\":\"Unsupported file type: budget.csv\"}"
+  }
+]
